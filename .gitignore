@@ -1,0 +1,5 @@
+data
+
+# Ignore all .pkl files
+*.pkl
+*.csv

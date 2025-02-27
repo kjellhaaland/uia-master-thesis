@@ -3,3 +3,10 @@ data
 # Ignore all .pkl files
 *.pkl
 *.csv
+
+# Ignore everything in the data_test and data_train directories
+**/data_test/*
+**/data_train/*
+**/test_data/*
+**/train_data/*
+**/data/*

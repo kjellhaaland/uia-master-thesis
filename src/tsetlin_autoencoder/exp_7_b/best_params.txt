@@ -1,0 +1,8 @@
+number_of_clauses: 1382
+T: 5368
+s: 44
+max_included_literals: 871
+accumulation: 1
+feature_negation: True
+output_balancing: 4.331756938281006
+number_of_examples: 100

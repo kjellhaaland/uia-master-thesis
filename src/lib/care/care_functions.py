@@ -23,9 +23,6 @@ def weight_function(x):
 
 
 def calculate_earliness(p):
-    if len(p) == 0:
-        return 0
-    
     size = len(p)
     s1 = 0
     s2 = 0

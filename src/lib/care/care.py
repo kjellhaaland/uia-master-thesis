@@ -13,14 +13,14 @@ def calculate_care_score(events):
     for event in events:
         df = event['data']
 
+        # leave only prediction interval
+        prediction = df[df['train_test'] == 'prediction']
+
         if not event['normal']:
             anomaly_count += 1
 
-            # leave only prediction interval
-            # prediction = df[df['train_test'] == 'prediction']
-
             # from prediction interval filter out abnormal status ids, include only 0, 2
-            normal = df[df['status_type_id'].isin([0, 2])]
+            normal = prediction[prediction['status_type_id'].isin([0, 2])]
 
             g = normal['label'].values
             p = normal['prediction'].values
@@ -31,16 +31,14 @@ def calculate_care_score(events):
         else:
             normal_count += 1
 
-            # leave only prediction interval
-            # prediction = df[df['train_test'] == 'prediction']
-
-            g = df['label'].values
-            p = df['prediction'].values
+            g = prediction['label'].values
+            p = prediction['prediction'].values
             acc = functions.calculate_accuracy(g, p)
             acc_sum += acc
 
-        s = df['status_type_id'].values
-        p = df['prediction'].values
+        s = prediction['status_type_id'].values
+        p = prediction['prediction'].values
+
         event_g = 0 if event['normal'] else 1
         event_p = functions.calculate_reliability(s, p)
         event_gs.append(event_g)
@@ -50,6 +48,7 @@ def calculate_care_score(events):
     fb_mean = fb_sum / anomaly_count if anomaly_count > 0 else 0
     ws_mean = ws_sum / anomaly_count if anomaly_count > 0 else 0
     acc_mean = acc_sum / normal_count if normal_count > 0 else 0
+    
     if all(x == 0 for x in event_ps):
         return 0
     elif acc_mean < 0.5:

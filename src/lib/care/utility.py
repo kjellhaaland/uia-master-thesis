@@ -21,10 +21,6 @@ def get_counts(g, p):
 
 
 def fb_score(g, p):
-    # If they are empty, return 0
-    if len(g) == 0 or len(p) == 0:
-        return 0
-
     tp, fn, fp, tn = get_counts(g, p)
 
     # correct formula taken from

@@ -44,11 +44,18 @@ def calculate_care_score(events):
         event_gs.append(event_g)
         event_ps.append(event_p)
 
+    # Reliability
     efb = utility.fb_score(event_gs, event_ps)
+
+    # Coverage
     fb_mean = fb_sum / anomaly_count if anomaly_count > 0 else 0
+
+    # Earliness
     ws_mean = ws_sum / anomaly_count if anomaly_count > 0 else 0
+
+    # Accuracy
     acc_mean = acc_sum / normal_count if normal_count > 0 else 0
-    
+
     if all(x == 0 for x in event_ps):
         return 0
     elif acc_mean < 0.5:

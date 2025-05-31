@@ -1,0 +1,4 @@
+number_of_clauses: 1762
+T: 4365
+s: 63
+max_included_literals: 666

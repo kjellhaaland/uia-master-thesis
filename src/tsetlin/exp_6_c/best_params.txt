@@ -1,0 +1,4 @@
+number_of_clauses: 2140
+T: 4622
+s: 23.706791496433414
+max_included_literals: 8658

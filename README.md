@@ -20,4 +20,4 @@ paper. [Read the paper here](https://paperswithcode.com/paper/care-to-compare-a-
 
 ## Results
 
-![Results](src/model_radar_chart.pdf)
+![Results](figures/model_radar_chart.jpg)

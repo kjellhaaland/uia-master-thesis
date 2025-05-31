@@ -1,3 +1,6 @@
+![Research](https://img.shields.io/badge/Research-Tsetlin%20Machine-red)
+![Research](https://img.shields.io/badge/Research-Tsetlin%20Machine%20Autoencoder-yellow)
+
 # Anomaly Detection in Wind Turbine SCADA Data Using Tsetlin Machine Autoencoder and Classifier
 
 Welcome to the repository for our 2025 master thesis "Anomaly Detection in Wind Turbine SCADA Data Using Tsetlin Machine

@@ -31,6 +31,10 @@ def calculate_earliness(p):
         w = weight_function(x)
         s1 += w * p[i]
         s2 += w
+
+    if s2 == 0:
+        return 0
+
     return s1 / s2
 
 

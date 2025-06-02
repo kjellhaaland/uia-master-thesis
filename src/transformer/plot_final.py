@@ -79,18 +79,18 @@ configs = [
         [11, 33, 44, 49, 31, 67, 9, 91, 5, 90, 70, 35, 16,
          76, 61, 93, 75, 41, 58, 48, 88, 57, 32, 89, 59, 63,
          80, 37, 29, 1, 20, 60],
-     'threshold': {'MSELoss': 0.89, 'WeightedAnomalyLoss': 0.9996, 'RewardedAnomalyLoss': 0.6000}},
+     'threshold': {'MSELoss': 0.9904, 'WeightedAnomalyLoss': 0.9996, 'RewardedAnomalyLoss': 0.6000}},
 ]
 criteria = [
     'MSELoss',
     # 'WeightedAnomalyLoss',
-    # 'RewardedAnomalyLoss'
+    'RewardedAnomalyLoss'
 ]
 
 for config in configs:
     for loss in criteria:
         dataset_name = config['name']
-        model_name = dataset_name + ' ' + loss + '_pos'
+        model_name = dataset_name + ' ' + loss
         number = config['number']
         threshold = config['threshold'][loss]
         include = config['include']
